@@ -11,13 +11,14 @@
 // Esta función consulta la API /api/saludo del backend.
 // Si el backend responde, muestra el mensaje en el título principal.
 // Si el backend falla, muestra un error en ese mismo título.
+const API_BASE_URL = "https://prototipocolflux.onrender.com";
 function cargarSaludo() {
 
     // Busca en el HTML el título donde se mostrará el estado del backend.
     const estadoBackend = document.getElementById("estado-backend");
 
     // Hace una solicitud al backend en Java.
-    fetch("http://localhost:8080/api/saludo")
+  fetch(`${API_BASE_URL}/api/saludo`)
 
         // Convierte la respuesta del backend en texto.
         .then(response => response.text())
@@ -62,7 +63,7 @@ function cargarSaludo() {
 function cargarWiki() {
 
     // fetch() hace una solicitud al backend en la ruta /api/wiki.
-    fetch("http://localhost:8080/api/wiki")
+    fetch(`${API_BASE_URL}/api/wiki`)
 
         // Cuando el backend responde, convertimos la respuesta a JSON.
         // Usamos response.json() porque /api/wiki devuelve una lista de objetos.
