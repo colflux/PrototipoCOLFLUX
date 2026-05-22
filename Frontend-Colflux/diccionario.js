@@ -2,7 +2,7 @@
 // DICCIONARIO COLFLUX
 // Archivo JavaScript específico para diccionario.html
 // -----------------------------------------------------------------------------
-
+const API_BASE_URL = "https://prototipocolflux.onrender.com";
 // Variable global donde guardaremos todos los términos recibidos desde el backend.
 let terminosWiki = [];
 
@@ -58,7 +58,7 @@ function obtenerElemento(id) {
 function cargarTerminosDesdeBackend() {
 
     // Consulta la API del backend.
-    fetch("http://localhost:8080/api/wiki")
+    fetch(`${API_BASE_URL}/api/wiki`)
 
         // Convierte la respuesta en JSON.
         .then(response => {
@@ -581,7 +581,7 @@ function guardarValoracion() {
     const puntaje = Number(inputValoracion.value);
 
     // Envía la valoración al backend.
-    fetch("http://localhost:8080/api/valoraciones", {
+    fetch(`${API_BASE_URL}/api/valoraciones`, {
 
         // Método POST para guardar.
         method: "POST",
@@ -642,7 +642,7 @@ function cargarResumenValoracion(titulo) {
     const tituloCodificado = encodeURIComponent(titulo);
 
     // Consulta el resumen del término.
-    fetch(`http://localhost:8080/api/valoraciones?titulo=${tituloCodificado}`)
+    fetch(`${API_BASE_URL}/api/valoraciones?titulo=${tituloCodificado}`)
 
         // Convierte respuesta en JSON.
         .then(response => response.json())
