@@ -1,0 +1,266 @@
+<!-- Indica que este archivo usa HTML5. -->
+<!DOCTYPE html>
+
+<!-- Abre el documento HTML e indica que el idioma principal es español. -->
+<html lang="es">
+
+<head>
+    <!-- Permite usar tildes, ñ y caracteres especiales. -->
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte a celular, tablet y computador. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador. -->
+    <title>COLFLUX - Diccionario</title>
+
+    <!-- Carga la tipografía IBM Plex Sans desde Google Fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conecta el archivo CSS general del proyecto. -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal igual al de las otras páginas. -->
+    <header class="header-principal">
+
+        <!-- Contenedor del logo. -->
+        <div class="logo-contenedor">
+
+            <!-- Logo del proyecto COLFLUX. -->
+            <img src="assets/img/logo-colflux.png" alt="Logo COLFLUX" class="logo-colflux">
+
+        </div>
+
+        <!-- Texto superior derecho. -->
+        <div class="header-texto">
+
+            <!-- Descripción corta de la página. -->
+            <p>Consulta de información, datos y gráficas de carbono</p>
+
+        </div>
+
+    </header>
+
+    <!-- Contenido principal del diccionario. -->
+    <main class="contenido-principal">
+
+        <!-- Botón para volver a la página principal. -->
+        <a href="index.html" class="btn-volver">
+            ← Volver al inicio
+        </a>
+
+        <!-- Contenedor principal en dos columnas: izquierda y derecha. -->
+        <section class="diccionario-layout">
+
+            <!-- =========================================================
+                 COLUMNA IZQUIERDA: BUSCADOR Y LISTA DE TÉRMINOS
+            ========================================================== -->
+            <aside class="diccionario-panel-izquierdo">
+
+                <!-- Título del panel izquierdo. -->
+                <h1 class="titulo-diccionario">Diccionario</h1>
+
+                <!-- Buscador del diccionario. -->
+                <div class="buscador-diccionario">
+
+                    <!-- Campo donde el usuario escribe el término. -->
+                    <input 
+                        type="text" 
+                        id="input-diccionario" 
+                        placeholder="Buscar término..."
+                    >
+
+                    <!-- Botón para ejecutar la búsqueda. -->
+                    <button id="btn-diccionario">
+                        Buscar
+                    </button>
+
+                </div>
+
+                <!-- Filtro alfabético visual. -->
+                <!-- Filtros por categoría del diccionario. -->
+                <div class="filtro-categorias">
+
+                    <!-- Muestra todos los términos. -->
+                    <button data-categoria="todos" class="categoria-activa">Todos</button>
+
+                    <!-- Filtros principales según las categorías ecológicas del diccionario. -->
+                    <button data-categoria="olor">Olor</button>
+                    <button data-categoria="color">Color</button>
+                    <button data-categoria="suelo">Suelo</button>
+                    <button data-categoria="sensacion">Sensación ambiental</button>
+                    <button data-categoria="observacion">Observación</button>
+                    <button data-categoria="frases">Frases de campo</button>
+                    <button data-categoria="definiciones">Definiciones</button>
+
+                </div>
+
+                <!-- Lista donde JavaScript insertará los términos cargados desde /api/wiki. -->
+                <div id="lista-terminos" class="lista-terminos">
+                    Cargando términos...
+                </div>
+
+            </aside>
+
+            <!-- =========================================================
+                 COLUMNA DERECHA: DETALLE DEL TÉRMINO SELECCIONADO
+            ========================================================== -->
+            <section class="diccionario-panel-derecho">
+
+                <!-- Categoría del término seleccionado. -->
+                <span id="detalle-categoria" class="detalle-categoria">
+                    Selecciona un término
+                </span>
+
+                <!-- Título del término seleccionado. -->
+                <h2 id="detalle-titulo" class="detalle-titulo">
+                    Diccionario COLFLUX
+                </h2>
+
+                <!-- Subtítulo de definición. -->
+                <p class="detalle-label">Definición ecológica</p>
+
+                <!-- Definición básica o definición ecológica del término. -->
+                <div id="detalle-definicion" class="detalle-definicion">
+                    Busca o selecciona un término del lado izquierdo para visualizar su definición.
+                </div>
+
+                <!-- Separador visual entre definición básica e información avanzada. -->
+                <div class="separador-diccionario"></div>
+
+                <!-- =====================================================
+                     BLOQUE AVANZADO:
+                     Solo se mostrará cuando el término tenga variables,
+                     regla cuantitativa o interpretación.
+                ====================================================== -->
+                <div id="bloque-avanzado" class="bloque-avanzado">
+
+                    <!-- Título del bloque avanzado. -->
+                    <h3>Información ecológica y cuantitativa</h3>
+
+                    <!-- Variable asociada. -->
+                    <div class="detalle-avanzado-item">
+
+                        <!-- Etiqueta del campo. -->
+                        <strong>Variable asociada:</strong>
+
+                        <!-- Valor llenado por diccionario.js. -->
+                        <span id="detalle-variable-asociada">
+                            Sin información registrada.
+                        </span>
+
+                    </div>
+
+                    <!-- Variable secundaria. -->
+                    <div class="detalle-avanzado-item">
+
+                        <!-- Etiqueta del campo. -->
+                        <strong>Variable secundaria:</strong>
+
+                        <!-- Valor llenado por diccionario.js. -->
+                        <span id="detalle-variable-secundaria">
+                            Sin información registrada.
+                        </span>
+
+                    </div>
+
+                    <!-- Regla cuantitativa. -->
+                    <div class="detalle-avanzado-item">
+
+                        <!-- Etiqueta del campo. -->
+                        <strong>Regla cuantitativa:</strong>
+
+                        <!-- Valor llenado por diccionario.js. -->
+                        <span id="detalle-regla-cuantitativa">
+                            Sin información registrada.
+                        </span>
+
+                    </div>
+
+                    <!-- Interpretación ecológica. -->
+                    <div class="detalle-avanzado-item interpretacion-item">
+
+                        <!-- Etiqueta del campo. -->
+                        <strong>Interpretación ecológica:</strong>
+
+                        <!-- Valor llenado por diccionario.js. -->
+                        <span id="detalle-interpretacion">
+                            Sin información registrada.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                                <!-- Bloque de valoración y semáforo de aceptación de usuarios. -->
+                    <div class="bloque-concordancia">
+
+                        <!-- Título del bloque. -->
+                        <h3>Semáforo de aceptación de usuarios</h3>
+
+                        <!-- Texto explicativo. -->
+                        <p class="texto-semaforo">
+                            Califica de 0 a 100 qué tanto la información coincide con tu observación o criterio de campo.
+                        </p>
+
+                        <!-- Control de calificación. -->
+                        <div class="control-valoracion">
+
+                            <!-- Slider de 0 a 100. -->
+                            <input 
+                                type="range" 
+                                id="input-valoracion" 
+                                min="0" 
+                                max="100" 
+                                value="50"
+                            >
+
+                            <!-- Valor visible del slider. -->
+                            <span id="valor-valoracion">50%</span>
+
+                            <!-- Botón para guardar valoración. -->
+                            <button id="btn-guardar-valoracion">
+                                Guardar valoración
+                            </button>
+
+                        </div>
+
+                        <!-- Resultado del semáforo. -->
+                        <div class="resultado-semaforo">
+
+                            <!-- Círculo visual del semáforo. -->
+                            <div id="semaforo-indicador" class="semaforo-indicador semaforo-gris"></div>
+
+                            <!-- Información numérica del semáforo. -->
+                            <div class="semaforo-info">
+
+                                <!-- Promedio de aceptación. -->
+                                <strong id="promedio-aceptacion">Promedio de aceptación: sin valoraciones</strong>
+
+                                <!-- Total de valoraciones. -->
+                                <span id="total-valoraciones">Total de valoraciones: 0</span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Mensaje posterior a guardar. -->
+                        <p id="mensaje-valoracion" class="mensaje-valoracion"></p>
+
+                    </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- Conecta el JavaScript específico del diccionario. -->
+    <script src="diccionario.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!-- Indica que este archivo usa HTML5. -->
+<!DOCTYPE html>
+
+<!-- Abre el documento HTML e indica que el idioma principal es español. -->
+<html lang="es">
+
+<head>
+    <!-- Permite usar tildes, ñ y caracteres especiales. -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte correctamente a celulares, tablets y computadores. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador. -->
+    <title>COLFLUX - Dashboard</title>
+
+    <!-- Carga la tipografía IBM Plex Sans desde Google Fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conecta el mismo archivo CSS usado en la página principal. -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal del dashboard. -->
+    <header class="header-principal">
+
+        <!-- Contenedor del logo. -->
+        <div class="logo-contenedor">
+
+            <!-- Logo del proyecto COLFLUX. -->
+            <img src="assets/img/logo-colflux.png" alt="Logo COLFLUX" class="logo-colflux">
+
+        </div>
+
+        <!-- Texto superior derecho. -->
+        <div class="header-texto">
+
+            <!-- Descripción de esta página. -->
+            <p>Dashboard de datos y gráficas de carbono</p>
+
+        </div>
+
+    </header>
+
+    <!-- Contenido principal del dashboard. -->
+    <main class="contenido-principal">
+
+        <!-- Botón o enlace para volver a la página principal. -->
+        <a href="index.html" class="btn-volver">
+            ← Volver al inicio
+        </a>
+
+        <!-- Bloque principal del dashboard. -->
+        <section class="bloque">
+
+            <!-- Título principal del dashboard. -->
+            <h1 class="titulo-dashboard">
+                Dashboard COLFLUX
+            </h1>
+
+            <!-- Texto introductorio. -->
+            <p class="texto-seccion">
+                En esta sección se visualizarán los datos ambientales cargados desde el archivo CSV,
+                incluyendo flujos de CO₂, flujos de CH₄, temperatura del aire y variables asociadas
+                al monitoreo ecosistémico.
+            </p>
+
+            <a href="analisis.html" class="btn-volver">
+    Ver análisis estadístico completo →
+</a>
+
+        </section>
+
+        <!-- Bloque reservado para controles del dashboard. -->
+        <section class="bloque">
+
+            <!-- Título de la sección de filtros. -->
+            <h2 class="titulo-seccion">Filtros de visualización</h2>
+
+            <!-- Texto temporal. -->
+            <p class="texto-seccion">
+                Aquí agregaremos filtros por variable, punto de medición, día/noche y vegetación.
+            </p>
+
+                        <!-- Contenedor de filtros del dashboard. -->
+               <!-- Contenedor de filtros del dashboard. -->
+                        <div class="filtros-dashboard">
+
+                                        <!-- Filtro por punto de medición. -->
+                                        <div class="filtro-item">
+
+                                            <!-- Etiqueta del filtro. -->
+                                            <label for="filtro-punto">Punto de medición</label>
+
+                                            <!-- 
+                                                Selector del punto.
+                                                JavaScript lo llenará automáticamente con los puntos disponibles:
+                                                1, 2, 3... hasta 20.
+                                            -->
+                                            <select id="filtro-punto">
+                                                <option value="">Cargando puntos...</option>
+                                            </select>
+
+                                        </div>
+
+                                        <!-- Filtro por variable: CO2, CH4 o ambas. -->
+                                        <div class="filtro-item">
+
+                                            <!-- Etiqueta del filtro. -->
+                                            <label for="filtro-variable">Variable</label>
+
+                                            <!-- Selector de variable a graficar. -->
+                                            <select id="filtro-variable">
+                                                <option value="ambas">CO₂ y CH₄</option>
+                                                <option value="co2">Solo CO₂</option>
+                                                <option value="ch4">Solo CH₄</option>
+                                            </select>
+
+                                        </div>
+
+                                        <!-- Filtro día/noche. -->
+                                        <div class="filtro-item">
+
+                                            <!-- Etiqueta del filtro. -->
+                                            <label for="filtro-dia-noche">Condición</label>
+
+                                            <!-- Selector día/noche. -->
+                                            <select id="filtro-dia-noche">
+                                                <option value="todos">Todos</option>
+                                                <option value="d">Día</option>
+                                                <option value="n">Noche</option>
+                                            </select>
+
+                                        </div>
+
+                                       <!-- Filtro para seleccionar una medición específica del punto. -->
+                                        <div class="filtro-item">
+
+                                            <!-- Etiqueta del filtro. -->
+                                            <label for="filtro-medicion">Medición</label>
+
+                                            <!-- 
+                                                Selector de medición.
+                                                JavaScript lo llenará automáticamente con las mediciones disponibles
+                                                según el punto y el filtro día/noche.
+                                            -->
+                                            <select id="filtro-medicion">
+                                                <option value="">Cargando mediciones...</option>
+                                            </select>
+
+                                        </div> 
+
+                                    </div>
+
+        </section>
+
+        <!-- Bloque reservado para gráfica. -->
+        <section class="bloque">
+
+            <!-- Título de la sección gráfica. -->
+            <h2 class="titulo-seccion">Gráfica de datos</h2>
+
+<!-- Contenedor real de la gráfica. -->
+<div class="grafica-contenedor">
+
+    <!-- Canvas donde Chart.js dibujará la gráfica de CO2 y CH4. -->
+    <canvas id="grafica-flujos"></canvas>
+
+</div>
+
+            <!-- Caja donde se mostrará la vegetación asociada al punto seleccionado. -->
+            <div id="vegetacion-punto" class="vegetacion-punto">
+                Vegetación del punto seleccionado: cargando...
+            </div>
+            
+                            <!-- Bloque donde se mostrarán las relaciones entre datos cuantitativos y diccionario. -->
+                <div id="relaciones-diccionario" class="relaciones-diccionario">
+
+                    <!-- Mensaje inicial. -->
+                    Selecciona una medición para ver relaciones con el diccionario ecológico.
+
+                </div>
+
+        </section>
+
+        <!-- Bloque reservado para tabla resumen. -->
+        <section class="bloque">
+
+            <!-- Título de la tabla. -->
+            <h2 class="titulo-seccion">Vista previa de datos</h2>
+
+            <!-- Contenedor con scroll horizontal para la tabla. -->
+            <div class="tabla-contenedor">
+
+                <!-- Tabla de datos. -->
+                <table class="tabla-datos">
+
+                    <!-- Encabezado de la tabla. -->
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Punto</th>
+                            <th>Día/Noche</th>
+                            <th>CO₂ flux</th>
+                            <th>CH₄ flux</th>
+                            <th>Temp. suelo</th>
+                            <th>Temp. aire</th>
+                            <th>Presión</th>
+                            <th>RH</th>
+                            <th>Dew point</th>
+                            <th>PAR inicio</th>
+                            <th>PAR fin</th>
+                            <th>Vegetación</th>
+                            <th>Nivel agua cm</th>
+                            <th>Nivel agua msnm</th>
+                        </tr>
+                    </thead>
+
+                    <!-- Cuerpo de la tabla que luego llenará JavaScript. -->
+                    <tbody id="tabla-dashboard-body">
+                        <tr>
+                            <td colspan="8">Cargando datos...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Librería Chart.js para crear gráficas en el dashboard. -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Conecta el archivo JavaScript específico del dashboard. -->
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1676 @@
+/* ------------------------------------------------------------
+   VARIABLES DE COLOR COLFLUX
+------------------------------------------------------------ */
+:root {
+    /* Colores primarios */
+    --verde-principal: #198A77;
+    --verde-oliva: #739E5B;
+    --amarillo: #F2B91B;
+
+    /* Colores secundarios */
+    --cafe-oscuro: #57270F;
+    --naranja-fuerte: #DF5B26;
+    --naranja-claro: #F19F1F;
+
+    /* Colores de apoyo */
+    --fondo-general: #F7F8F4;
+    --blanco: #FFFFFF;
+    --gris-borde: #D8D8D8;
+    --gris-suave: #F5F7F4;
+    --texto-principal: #263238;
+}
+
+/* ------------------------------------------------------------
+   ESTILOS GENERALES
+------------------------------------------------------------ */
+* {
+    /* Hace que padding y border se incluyan dentro del ancho total */
+    box-sizing: border-box;
+}
+
+body {
+    /* Quita el margen automático del navegador */
+    margin: 0;
+
+    /* Define la tipografía general del proyecto */
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+
+    /* Color de fondo general */
+    background-color: var(--fondo-general);
+
+    /* Color principal de texto */
+    color: var(--texto-principal);
+}
+
+/* ------------------------------------------------------------
+   HEADER PRINCIPAL
+------------------------------------------------------------ */
+.header-principal {
+    /* Organiza logo y texto en una fila */
+    display: flex;
+
+    /* Separa logo a la izquierda y texto a la derecha */
+    justify-content: space-between;
+
+    /* Centra verticalmente los elementos */
+    align-items: center;
+
+    /* Fondo verde principal */
+    background-color: var(--verde-principal);
+
+    /* Espacio interno del header */
+    padding: 16px 30px;
+
+    /* Línea inferior amarilla */
+    border-bottom: 6px solid var(--amarillo);
+}
+
+/* Contenedor del logo SIN fondo blanco */
+.logo-contenedor {
+    /* Quita cualquier fondo del contenedor */
+    background-color: transparent;
+
+    /* Quita espacio interno para que no parezca una caja */
+    padding: 0;
+
+    /* Quita bordes redondeados */
+    border-radius: 0;
+
+    /* Permite alinear correctamente el logo */
+    display: flex;
+
+    /* Centra verticalmente el logo */
+    align-items: center;
+}
+
+/* Imagen del logo */
+.logo-colflux {
+    /* Tamaño del logo */
+    width: 315px;
+
+    /* Mantiene la proporción original */
+    height: auto;
+
+    /* Evita espacios raros debajo de la imagen */
+    display: block;
+
+    /* No agrega fondo a la imagen */
+    background-color: transparent;
+
+    /* Sombra suave para que se vea sobre el fondo verde */
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.18));
+}
+
+/* Texto derecho del header */
+.header-texto {
+    /* Limita el ancho del texto */
+    max-width: 430px;
+
+    /* Alinea el texto a la derecha */
+    text-align: right;
+
+    /* Color blanco */
+    color: var(--blanco);
+
+    /* Tamaño del texto */
+    font-size: 20px;
+
+    /* Grosor medio */
+    font-weight: 500;
+
+    /* Altura de línea */
+    line-height: 1.35;
+}
+
+/* Párrafo dentro del texto del header */
+.header-texto p {
+    /* Quita margen por defecto */
+    margin: 0;
+}
+
+/* ------------------------------------------------------------
+   CONTENIDO PRINCIPAL
+------------------------------------------------------------ */
+.contenido-principal {
+    /* Ancho máximo del contenido */
+    max-width: 1100px;
+
+    /* Centra el contenido */
+    margin: 0 auto;
+
+    /* Espacio interno */
+    padding: 32px 24px;
+}
+
+/* Bloques principales */
+.bloque {
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Borde suave */
+    border: 2px solid var(--gris-borde);
+
+    /* Bordes redondeados */
+    border-radius: 12px;
+
+    /* Espacio interno */
+    padding: 24px;
+
+    /* Separación entre bloques */
+    margin-bottom: 32px;
+
+    /* Sombra suave */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* ------------------------------------------------------------
+   BIENVENIDA
+------------------------------------------------------------ */
+/* Título dinámico de la bienvenida.
+   Este título también funciona como estado de conexión con el backend. */
+.estado-backend {
+    /* Quita margen superior */
+    margin-top: 0;
+
+    /* Color verde por defecto */
+    color: var(--verde-principal);
+
+    /* Tamaño del título */
+    font-size: 26px;
+
+    /* Grosor fuerte */
+    font-weight: 700;
+
+    /* Línea decorativa izquierda */
+    border-left: 6px solid var(--amarillo);
+
+    /* Separación entre línea y texto */
+    padding-left: 12px;
+}
+
+/* Estado correcto: backend conectado */
+.estado-ok {
+    /* Mantiene el color verde principal */
+    color: var(--verde-principal);
+
+    /* Mantiene línea amarilla */
+    border-left-color: var(--amarillo);
+}
+
+/* Estado de error: backend no conectado */
+.estado-error {
+    /* Cambia el texto a naranja fuerte */
+    color: var(--naranja-fuerte);
+
+    /* Cambia la línea izquierda a naranja fuerte */
+    border-left-color: var(--naranja-fuerte);
+}
+
+.bienvenida p {
+    /* Tamaño del texto */
+    font-size: 17px;
+
+    /* Altura de línea */
+    line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   BLOQUE DE CONSULTA
+------------------------------------------------------------ */
+.bloque-consulta {
+    /* Espacio interno */
+    padding: 28px;
+}
+
+/* Contenedor del buscador */
+.buscador-contenedor {
+    /* Pone input y botón en fila */
+    display: flex;
+
+    /* Ancho máximo */
+    max-width: 420px;
+
+    /* Separación inferior */
+    margin-bottom: 28px;
+
+    /* Borde del buscador */
+    border: 2px solid var(--gris-borde);
+
+    /* Forma redondeada */
+    border-radius: 28px;
+
+    /* Oculta elementos que se salgan */
+    overflow: hidden;
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+}
+
+/* Campo de texto del buscador */
+.buscador-contenedor input {
+    /* Ocupa el espacio disponible */
+    flex: 1;
+
+    /* Quita borde */
+    border: none;
+
+    /* Quita contorno al seleccionar */
+    outline: none;
+
+    /* Espacio interno */
+    padding: 12px 16px;
+
+    /* Tamaño de letra */
+    font-size: 15px;
+
+    /* Tipografía */
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+/* Botón del buscador */
+.buscador-contenedor button {
+    /* Quita borde */
+    border: none;
+
+    /* Fondo verde */
+    background-color: var(--verde-principal);
+
+    /* Texto blanco */
+    color: var(--blanco);
+
+    /* Espacio interno */
+    padding: 0 20px;
+
+    /* Cursor tipo mano */
+    cursor: pointer;
+
+    /* Texto en negrilla */
+    font-weight: 600;
+
+    /* Tipografía */
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+/* Efecto hover del botón */
+.buscador-contenedor button:hover {
+    /* Cambia a verde oliva */
+    background-color: var(--verde-oliva);
+}
+
+/* Contenedor de tarjetas principales */
+.tarjetas-acceso {
+    /* Organiza tarjetas en fila */
+    display: flex;
+
+    /* Espacio entre tarjetas */
+    gap: 32px;
+
+    /* Permite que bajen en pantallas pequeñas */
+    flex-wrap: wrap;
+}
+
+/* Tarjetas Diccionario y Dashboard */
+.tarjeta-acceso {
+    /* Fondo suave */
+    background-color: var(--gris-suave);
+
+    /* Borde verde oliva */
+    border: 2px solid var(--verde-oliva);
+
+    /* Espacio interno */
+    padding: 24px;
+
+    /* Bordes redondeados */
+    border-radius: 8px;
+
+    /* Transición suave */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+    /* Hace que la tarjeta tenga altura completa cuando esté dentro de un enlace */
+    height: 100%;
+}
+
+.tarjetas-acceso {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-link,
+.tarjetas-acceso > .tarjeta-acceso {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta-acceso:hover {
+    /* Eleva la tarjeta */
+    transform: translateY(-4px);
+
+    /* Sombra */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+
+    /* Cambia borde a amarillo */
+    border-color: var(--amarillo);
+}
+
+/* Título de tarjeta */
+.tarjeta-acceso h2 {
+    /* Quita margen superior */
+    margin-top: 0;
+
+    /* Color verde */
+    color: var(--verde-principal);
+
+    /* Tamaño grande */
+    font-size: 28px;
+
+    /* Grosor fuerte */
+    font-weight: 700;
+}
+
+/* Texto de tarjeta */
+.tarjeta-acceso p {
+    /* Altura de línea */
+    line-height: 1.5;
+
+    /* Tamaño */
+    font-size: 15px;
+}
+
+/* ------------------------------------------------------------
+   WIKI
+------------------------------------------------------------ */
+.titulo-seccion {
+    /* Color café */
+    color: var(--cafe-oscuro);
+
+    /* Quita margen superior */
+    margin-top: 0;
+}
+
+.texto-seccion {
+    /* Color gris */
+    color: #4B5563;
+
+    /* Tamaño */
+    font-size: 16px;
+}
+
+/* Contenedor de tarjetas wiki */
+.contenedor-wiki {
+    /* Grilla responsive */
+    display: grid;
+
+    /* Columnas adaptables */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    /* Espacio entre tarjetas */
+    gap: 18px;
+
+    /* Espacio superior */
+    margin-top: 20px;
+}
+
+/* Tarjeta individual de wiki */
+.wiki-item {
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Borde verde suave */
+    border: 1.8px solid rgba(115, 158, 91, 0.55);
+
+    /* Borde superior amarillo */
+    border-top: 5px solid var(--amarillo);
+
+    /* Bordes redondeados */
+    border-radius: 10px;
+
+    /* Espacio interno */
+    padding: 18px;
+
+    /* Transición */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover en tarjetas wiki */
+.wiki-item:hover {
+    /* Eleva ligeramente */
+    transform: translateY(-3px);
+
+    /* Sombra suave */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.07);
+}
+
+/* Título de tarjeta wiki */
+.wiki-item h3 {
+    /* Quita margen superior */
+    margin-top: 0;
+
+    /* Color verde */
+    color: var(--verde-principal);
+
+    /* Tamaño */
+    font-size: 20px;
+}
+
+/* Texto de tarjeta wiki */
+.wiki-item p {
+    /* Altura de línea */
+    line-height: 1.5;
+
+    /* Tamaño */
+    font-size: 15px;
+}
+
+/* Etiqueta de categoría */
+.categoria {
+    /* Comportamiento de etiqueta */
+    display: inline-block;
+
+    /* Fondo naranja suave */
+    background-color: rgba(241, 159, 31, 0.18);
+
+    /* Texto naranja fuerte */
+    color: var(--naranja-fuerte);
+
+    /* Espacio interno */
+    padding: 5px 10px;
+
+    /* Bordes redondeados */
+    border-radius: 20px;
+
+    /* Tamaño */
+    font-size: 13px;
+
+    /* Negrilla */
+    font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   GALERÍA INFERIOR
+------------------------------------------------------------ */
+.galeria-ecosistemas {
+    /* Grilla para imágenes */
+    display: grid;
+
+    /* Columnas adaptables */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    /* Espacio entre imágenes */
+    gap: 22px;
+
+    /* Margen superior */
+    margin-top: 10px;
+}
+
+/* Tarjetas visuales temporales */
+.imagen-demo {
+    /* Altura */
+    height: 160px;
+
+    /* Degradado con colores COLFLUX */
+    background: linear-gradient(135deg, var(--verde-oliva), var(--verde-principal));
+
+    /* Bordes redondeados */
+    border-radius: 8px;
+
+    /* Centra contenido */
+    display: flex;
+
+    /* Centra horizontal */
+    justify-content: center;
+
+    /* Centra vertical */
+    align-items: center;
+
+    /* Texto blanco */
+    color: var(--blanco);
+
+    /* Negrilla */
+    font-weight: 700;
+
+    /* Sombra suave */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+@media (max-width: 700px) {
+    .header-principal {
+        /* Cambia header a columna */
+        flex-direction: column;
+
+        /* Centra elementos */
+        align-items: center;
+
+        /* Espacio entre logo y texto */
+        gap: 16px;
+
+        /* Menos padding en celular */
+        padding: 18px;
+    }
+
+    .logo-colflux {
+        /* Logo más pequeño en celular */
+        width: 230px;
+    }
+
+    .header-texto {
+        /* Centra texto en celular */
+        text-align: center;
+
+        /* Reduce tamaño */
+        font-size: 17px;
+    }
+
+    .contenido-principal {
+        /* Menos padding */
+        padding: 22px 16px;
+    }
+
+    .buscador-contenedor {
+        /* Ocupa todo el ancho */
+        max-width: 100%;
+    }
+
+    .tarjetas-acceso {
+        /* Menor espacio entre tarjetas */
+        gap: 18px;
+    }
+}
+
+/* Enlace que envuelve tarjetas como Dashboard.
+   Se usa para que toda la tarjeta sea clickeable sin verse como enlace azul. */
+.tarjeta-link {
+    /* Quita el subrayado típico de los enlaces. */
+    text-decoration: none;
+
+    /* Hace que el enlace herede el color normal del texto. */
+    color: inherit;
+
+    /* Permite que el enlace se comporte como una tarjeta flexible. */
+    flex: 1;
+
+    /* Define ancho mínimo igual que las tarjetas. */
+    min-width: 250px;
+
+    /* Hace que el enlace ocupe toda la altura disponible. */
+    display: flex;
+}
+
+/* Cuando una tarjeta está dentro de un enlace, ocupa todo el ancho. */
+.tarjeta-link .tarjeta-acceso {
+    /* Hace que la tarjeta ocupe todo el espacio del enlace. */
+    width: 100%;
+}
+
+/* ------------------------------------------------------------
+   DASHBOARD
+------------------------------------------------------------ */
+
+/* Botón para volver al inicio */
+.btn-volver {
+    /* Hace que el enlace se vea como botón */
+    display: inline-block;
+
+    /* Quita subrayado */
+    text-decoration: none;
+
+    /* Color de texto verde */
+    color: var(--verde-principal);
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Borde verde */
+    border: 2px solid var(--verde-principal);
+
+    /* Espacio interno */
+    padding: 10px 16px;
+
+    /* Bordes redondeados */
+    border-radius: 24px;
+
+    /* Texto fuerte */
+    font-weight: 600;
+
+    /* Separación inferior */
+    margin-bottom: 20px;
+
+    /* Transición suave */
+    transition: all 0.2s ease;
+}
+
+/* Efecto hover del botón volver */
+.btn-volver:hover {
+    /* Fondo verde */
+    background-color: var(--verde-principal);
+
+    /* Texto blanco */
+    color: var(--blanco);
+}
+
+/* Título principal del dashboard */
+.titulo-dashboard {
+    /* Color verde principal */
+    color: var(--verde-principal);
+
+    /* Quita margen superior */
+    margin-top: 0;
+
+    /* Tamaño */
+    font-size: 30px;
+
+    /* Línea izquierda amarilla */
+    border-left: 6px solid var(--amarillo);
+
+    /* Espacio entre línea y texto */
+    padding-left: 12px;
+}
+
+/* Contenedor de filtros */
+.filtros-dashboard {
+    /* Organiza filtros en fila */
+    display: flex;
+
+    /* Espacio entre filtros */
+    gap: 20px;
+
+    /* Permite que se acomoden en pantallas pequeñas */
+    flex-wrap: wrap;
+
+    /* Espacio superior */
+    margin-top: 20px;
+}
+
+/* Cada filtro individual */
+.filtro-item {
+    /* Organiza label y select en columna */
+    display: flex;
+
+    /* Dirección vertical */
+    flex-direction: column;
+
+    /* Ancho mínimo */
+    min-width: 220px;
+}
+
+/* Etiqueta del filtro */
+.filtro-item label {
+    /* Texto fuerte */
+    font-weight: 600;
+
+    /* Color café */
+    color: var(--cafe-oscuro);
+
+    /* Separación inferior */
+    margin-bottom: 8px;
+}
+
+/* Selector de filtros */
+.filtro-item select {
+    /* Espacio interno */
+    padding: 10px 12px;
+
+    /* Borde suave */
+    border: 2px solid var(--gris-borde);
+
+    /* Bordes redondeados */
+    border-radius: 8px;
+
+    /* Tipografía */
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+
+    /* Tamaño de texto */
+    font-size: 15px;
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+}
+
+/* Espacio reservado para gráfica */
+.grafica-placeholder {
+    /* Altura temporal */
+    min-height: 320px;
+
+    /* Fondo suave */
+    background-color: rgba(25, 138, 119, 0.06);
+
+    /* Borde punteado */
+    border: 2px dashed var(--verde-oliva);
+
+    /* Bordes redondeados */
+    border-radius: 12px;
+
+    /* Centrar texto */
+    display: flex;
+
+    /* Centrar horizontal */
+    justify-content: center;
+
+    /* Centrar vertical */
+    align-items: center;
+
+    /* Texto verde */
+    color: var(--verde-principal);
+
+    /* Texto fuerte */
+    font-weight: 600;
+
+    /* Espacio interno */
+    padding: 20px;
+
+    /* Texto centrado */
+    text-align: center;
+}
+
+/* ------------------------------------------------------------
+   DICCIONARIO / WIKI
+------------------------------------------------------------ */
+
+/* Contenedor principal del diccionario en dos columnas */
+.diccionario-layout {
+    /* Usa grilla para dividir izquierda y derecha */
+    display: grid;
+
+    /* Columna izquierda más pequeña y derecha más amplia */
+    grid-template-columns: 38% 62%;
+
+    /* Espacio entre columnas */
+    gap: 18px;
+
+    /* Alinea las columnas arriba */
+    align-items: stretch;
+}
+
+/* Panel izquierdo del diccionario */
+.diccionario-panel-izquierdo {
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Borde gris como el boceto */
+    border: 2px solid var(--gris-borde);
+
+    /* Bordes suaves */
+    border-radius: 8px;
+
+    /* Espacio interno */
+    padding: 22px;
+
+    /* Altura mínima */
+    min-height: 620px;
+
+    /* Sombra suave */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* Panel derecho del diccionario */
+.diccionario-panel-derecho {
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Borde gris */
+    border: 2px solid var(--gris-borde);
+
+    /* Bordes suaves */
+    border-radius: 8px;
+
+    /* Espacio interno */
+    padding: 28px;
+
+    /* Altura mínima */
+    min-height: 620px;
+
+    /* Sombra suave */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* Título del panel izquierdo */
+.titulo-diccionario {
+    /* Quita margen superior */
+    margin-top: 0;
+
+    /* Color verde principal */
+    color: var(--verde-principal);
+
+    /* Tamaño */
+    font-size: 28px;
+
+    /* Mayúsculas */
+    text-transform: uppercase;
+
+    /* Espaciado entre letras */
+    letter-spacing: 1px;
+}
+
+/* Buscador del diccionario */
+.buscador-diccionario {
+    /* Pone input y botón en fila */
+    display: flex;
+
+    /* Ancho completo */
+    width: 100%;
+
+    /* Margen inferior */
+    margin: 20px 0;
+
+    /* Borde */
+    border: 2px solid var(--gris-borde);
+
+    /* Bordes redondeados */
+    border-radius: 28px;
+
+    /* Oculta desbordes */
+    overflow: hidden;
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+}
+
+/* Input del buscador */
+.buscador-diccionario input {
+    /* Ocupa espacio disponible */
+    flex: 1;
+
+    /* Quita borde */
+    border: none;
+
+    /* Quita contorno */
+    outline: none;
+
+    /* Espacio interno */
+    padding: 12px 14px;
+
+    /* Tipografía */
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+
+    /* Tamaño */
+    font-size: 15px;
+}
+
+/* Botón del buscador */
+.buscador-diccionario button {
+    /* Quita borde */
+    border: none;
+
+    /* Fondo verde */
+    background-color: var(--verde-principal);
+
+    /* Texto blanco */
+    color: var(--blanco);
+
+    /* Espacio interno */
+    padding: 0 16px;
+
+    /* Texto fuerte */
+    font-weight: 700;
+
+    /* Cursor */
+    cursor: pointer;
+}
+
+/* Hover del botón buscador */
+.buscador-diccionario button:hover {
+    /* Cambia a verde oliva */
+    background-color: var(--verde-oliva);
+}
+
+/* Filtro alfabético */
+.filtro-alfabetico {
+    /* Flex para organizar letras */
+    display: flex;
+
+    /* Permite salto de línea */
+    flex-wrap: wrap;
+
+    /* Espacio entre letras */
+    gap: 8px;
+
+    /* Espacio inferior */
+    margin-bottom: 20px;
+}
+
+/* Botones de letras */
+.filtro-alfabetico button {
+    /* Quita borde por defecto */
+    border: none;
+
+    /* Fondo transparente */
+    background-color: transparent;
+
+    /* Color café */
+    color: var(--cafe-oscuro);
+
+    /* Texto fuerte */
+    font-weight: 700;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Tamaño */
+    font-size: 15px;
+
+    /* Espacio interno */
+    padding: 4px 6px;
+}
+
+/* Hover letras */
+.filtro-alfabetico button:hover {
+    /* Color verde */
+    color: var(--verde-principal);
+
+    /* Subrayado visual */
+    text-decoration: underline;
+}
+
+/* Lista vertical de términos */
+.lista-terminos {
+    /* Organiza en columna */
+    display: flex;
+
+    /* Dirección vertical */
+    flex-direction: column;
+
+    /* Espacio entre botones */
+    gap: 14px;
+
+    /* Altura máxima con scroll */
+    max-height: 430px;
+
+    /* Scroll vertical si hay muchos términos */
+    overflow-y: auto;
+
+    /* Espacio derecho para scroll */
+    padding-right: 6px;
+}
+
+/* Cada término listado */
+.termino-item {
+    /* Fondo suave */
+    background-color: var(--gris-suave);
+
+    /* Borde verde oliva */
+    border: 2px solid rgba(115, 158, 91, 0.65);
+
+    /* Texto verde */
+    color: var(--verde-principal);
+
+    /* Espacio interno */
+    padding: 18px;
+
+    /* Alineación izquierda */
+    text-align: left;
+
+    /* Tamaño */
+    font-size: 21px;
+
+    /* Texto fuerte */
+    font-weight: 700;
+
+    /* Bordes suaves */
+    border-radius: 6px;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Transición */
+    transition: all 0.2s ease;
+}
+
+/* Hover de término */
+.termino-item:hover {
+    /* Borde amarillo */
+    border-color: var(--amarillo);
+
+    /* Eleva visualmente */
+    transform: translateX(4px);
+
+    /* Sombra */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Mensaje cuando no hay términos */
+.termino-vacio {
+    /* Fondo suave */
+    background-color: rgba(223, 91, 38, 0.08);
+
+    /* Texto naranja */
+    color: var(--naranja-fuerte);
+
+    /* Borde */
+    border: 1px solid var(--naranja-fuerte);
+
+    /* Espacio interno */
+    padding: 14px;
+
+    /* Bordes */
+    border-radius: 8px;
+}
+
+/* Categoría en panel derecho */
+.detalle-categoria {
+    /* Etiqueta */
+    display: inline-block;
+
+    /* Fondo naranja suave */
+    background-color: rgba(241, 159, 31, 0.18);
+
+    /* Color naranja */
+    color: var(--naranja-fuerte);
+
+    /* Espacio interno */
+    padding: 6px 12px;
+
+    /* Bordes redondos */
+    border-radius: 20px;
+
+    /* Texto fuerte */
+    font-weight: 700;
+
+    /* Tamaño */
+    font-size: 13px;
+}
+
+/* Título grande del término */
+.detalle-titulo {
+    /* Color verde */
+    color: var(--verde-principal);
+
+    /* Tamaño grande */
+    font-size: 38px;
+
+    /* Margen */
+    margin: 18px 0 12px 0;
+}
+
+/* Label de definición */
+.detalle-label {
+    /* Color café */
+    color: var(--cafe-oscuro);
+
+    /* Texto fuerte */
+    font-weight: 700;
+
+    /* Tamaño */
+    font-size: 16px;
+}
+
+/* Caja de definición básica */
+.detalle-definicion {
+    /* Fondo suave */
+    background-color: rgba(25, 138, 119, 0.06);
+
+    /* Borde izquierdo verde */
+    border-left: 5px solid var(--verde-principal);
+
+    /* Espacio interno */
+    padding: 18px;
+
+    /* Bordes */
+    border-radius: 8px;
+
+    /* Tamaño */
+    font-size: 18px;
+
+    /* Altura de línea */
+    line-height: 1.6;
+}
+
+/* Separador visual */
+.separador-diccionario {
+    /* Altura de línea */
+    height: 2px;
+
+    /* Fondo con degradado */
+    background: linear-gradient(
+        to right,
+        var(--verde-principal),
+        var(--amarillo),
+        transparent
+    );
+
+    /* Margen */
+    margin: 28px 0;
+}
+
+/* Bloque avanzado */
+.bloque-avanzado {
+    /* Fondo suave */
+    background-color: #FAFAF7;
+
+    /* Borde */
+    border: 1px solid var(--gris-borde);
+
+    /* Bordes */
+    border-radius: 10px;
+
+    /* Espacio interno */
+    padding: 20px;
+
+    /* Margen inferior */
+    margin-bottom: 24px;
+}
+
+/* Título avanzado */
+.bloque-avanzado h3 {
+    /* Quita margen superior */
+    margin-top: 0;
+
+    /* Color café */
+    color: var(--cafe-oscuro);
+}
+
+/* Texto avanzado */
+.bloque-avanzado p {
+    /* Altura de línea */
+    line-height: 1.6;
+
+    /* Tamaño */
+    font-size: 16px;
+}
+
+/* Bloque concordancia */
+.bloque-concordancia {
+    /* Espacio superior */
+    margin-top: 20px;
+}
+
+/* Título concordancia */
+.bloque-concordancia h3 {
+    /* Color verde */
+    color: var(--verde-principal);
+}
+
+/* Barra de concordancia */
+.barra-concordancia {
+    /* Organiza segmentos */
+    display: grid;
+
+    /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Borde */
+    border: 2px solid var(--gris-borde);
+
+    /* Bordes */
+    border-radius: 8px;
+
+    /* Oculta desbordes */
+    overflow: hidden;
+
+    /* Texto centrado */
+    text-align: center;
+
+    /* Texto fuerte */
+    font-weight: 700;
+}
+
+/* Segmento bajo */
+.concordancia-baja {
+    /* Fondo rojo/naranja suave */
+    background-color: rgba(223, 91, 38, 0.18);
+
+    /* Color */
+    color: var(--naranja-fuerte);
+
+    /* Espacio */
+    padding: 10px;
+}
+
+/* Segmento medio */
+.concordancia-media {
+    /* Fondo amarillo suave */
+    background-color: rgba(242, 185, 27, 0.25);
+
+    /* Color café */
+    color: var(--cafe-oscuro);
+
+    /* Espacio */
+    padding: 10px;
+}
+
+/* Segmento alto */
+.concordancia-alta {
+    /* Fondo verde suave */
+    background-color: rgba(115, 158, 91, 0.25);
+
+    /* Color verde */
+    color: var(--verde-principal);
+
+    /* Espacio */
+    padding: 10px;
+}
+
+/* Responsive del diccionario */
+@media (max-width: 900px) {
+
+    /* En pantallas pequeñas se vuelve una sola columna */
+    .diccionario-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Menor altura mínima en celular */
+    .diccionario-panel-izquierdo,
+    .diccionario-panel-derecho {
+        min-height: auto;
+    }
+
+    /* Título derecho más pequeño */
+    .detalle-titulo {
+        font-size: 30px;
+    }
+}
+
+/* ------------------------------------------------------------
+   AJUSTES DE INFORMACIÓN AVANZADA DEL DICCIONARIO
+------------------------------------------------------------ */
+
+/* Cada fila de información avanzada */
+.detalle-avanzado-item {
+    /* Fondo blanco para diferenciar cada campo */
+    background-color: var(--blanco);
+
+    /* Borde suave */
+    border: 1px solid var(--gris-borde);
+
+    /* Borde izquierdo verde */
+    border-left: 5px solid var(--verde-oliva);
+
+    /* Espacio interno */
+    padding: 14px 16px;
+
+    /* Separación entre campos */
+    margin-bottom: 12px;
+
+    /* Bordes redondeados */
+    border-radius: 8px;
+
+    /* Altura de línea */
+    line-height: 1.5;
+}
+
+/* Etiqueta fuerte de cada campo avanzado */
+.detalle-avanzado-item strong {
+    /* Hace que el título del campo ocupe su propia línea */
+    display: block;
+
+    /* Color café para jerarquía */
+    color: var(--cafe-oscuro);
+
+    /* Separación inferior */
+    margin-bottom: 5px;
+
+    /* Tamaño */
+    font-size: 15px;
+}
+
+/* Texto de cada campo avanzado */
+.detalle-avanzado-item span {
+    /* Color principal */
+    color: var(--texto-principal);
+
+    /* Tamaño */
+    font-size: 16px;
+}
+
+/* Campo de interpretación con mayor énfasis */
+.interpretacion-item {
+    /* Fondo verde muy suave */
+    background-color: rgba(25, 138, 119, 0.06);
+
+    /* Borde izquierdo amarillo */
+    border-left-color: var(--amarillo);
+}
+
+/* ------------------------------------------------------------
+   GRÁFICA DE DASHBOARD
+------------------------------------------------------------ */
+
+/* Contenedor real de la gráfica */
+.grafica-contenedor {
+    /* Altura de la gráfica */
+    height: 420px;
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Borde suave */
+    border: 1px solid var(--gris-borde);
+
+    /* Bordes redondeados */
+    border-radius: 12px;
+
+    /* Espacio interno */
+    padding: 18px;
+
+    /* Margen superior */
+    margin-top: 18px;
+
+    /* Sombra suave */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* Caja de vegetación del punto seleccionado */
+.vegetacion-punto {
+    /* Margen superior */
+    margin-top: 16px;
+
+    /* Fondo verde suave */
+    background-color: rgba(25, 138, 119, 0.08);
+
+    /* Borde izquierdo verde */
+    border-left: 5px solid var(--verde-principal);
+
+    /* Espacio interno */
+    padding: 14px 16px;
+
+    /* Bordes redondeados */
+    border-radius: 8px;
+
+    /* Texto fuerte */
+    font-weight: 600;
+
+    /* Color principal */
+    color: var(--texto-principal);
+}
+
+/* ------------------------------------------------------------
+   FILTROS POR CATEGORÍA DEL DICCIONARIO
+------------------------------------------------------------ */
+
+/* Contenedor de filtros por categoría */
+.filtro-categorias {
+    /* Usa flexbox para organizar los botones */
+    display: flex;
+
+    /* Permite que los botones bajen de línea */
+    flex-wrap: wrap;
+
+    /* Espacio entre botones */
+    gap: 8px;
+
+    /* Espacio inferior */
+    margin-bottom: 20px;
+}
+
+/* Botones de categoría */
+.filtro-categorias button {
+    /* Quita borde por defecto */
+    border: 2px solid var(--gris-borde);
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Color de texto café */
+    color: var(--cafe-oscuro);
+
+    /* Texto fuerte */
+    font-weight: 700;
+
+    /* Cursor tipo mano */
+    cursor: pointer;
+
+    /* Tamaño de fuente */
+    font-size: 13px;
+
+    /* Espacio interno */
+    padding: 8px 12px;
+
+    /* Bordes redondeados */
+    border-radius: 20px;
+
+    /* Tipografía del proyecto */
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+
+    /* Transición suave */
+    transition: all 0.2s ease;
+}
+
+/* Hover de botones de categoría */
+.filtro-categorias button:hover {
+    /* Borde verde */
+    border-color: var(--verde-principal);
+
+    /* Texto verde */
+    color: var(--verde-principal);
+
+    /* Fondo verde muy suave */
+    background-color: rgba(25, 138, 119, 0.08);
+}
+
+/* Botón activo */
+.filtro-categorias button.categoria-activa {
+    /* Fondo verde principal */
+    background-color: var(--verde-principal);
+
+    /* Borde verde */
+    border-color: var(--verde-principal);
+
+    /* Texto blanco */
+    color: var(--blanco);
+}
+
+/* ------------------------------------------------------------
+   RELACIÓN DASHBOARD - DICCIONARIO
+------------------------------------------------------------ */
+
+.relaciones-diccionario {
+    margin-top: 18px;
+    background-color: rgba(242, 185, 27, 0.10);
+    border: 1px solid rgba(242, 185, 27, 0.45);
+    border-left: 6px solid var(--amarillo);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.relaciones-diccionario h3 {
+    margin-top: 0;
+    color: var(--cafe-oscuro);
+}
+
+.resumen-medicion {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.relaciones-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.relacion-item {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-top: 5px solid var(--verde-principal);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.relacion-categoria {
+    display: inline-block;
+    background-color: rgba(25, 138, 119, 0.10);
+    color: var(--verde-principal);
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.relacion-item h4 {
+    color: var(--verde-principal);
+    font-size: 20px;
+    margin: 12px 0 8px 0;
+}
+
+.relacion-regla,
+.relacion-interpretacion {
+    margin-top: 10px;
+    background-color: #FAFAF7;
+    border-left: 4px solid var(--verde-oliva);
+    border-radius: 6px;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   SEMÁFORO DE ACEPTACIÓN DEL DICCIONARIO
+------------------------------------------------------------ */
+
+.texto-semaforo {
+    line-height: 1.5;
+    color: var(--texto-principal);
+}
+
+.control-valoracion {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+}
+
+.control-valoracion input[type="range"] {
+    flex: 1;
+    min-width: 180px;
+}
+
+#valor-valoracion {
+    font-weight: 700;
+    color: var(--verde-principal);
+    min-width: 48px;
+}
+
+#btn-guardar-valoracion {
+    border: none;
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    padding: 10px 16px;
+    border-radius: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+#btn-guardar-valoracion:hover {
+    background-color: var(--verde-oliva);
+}
+
+.resultado-semaforo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.semaforo-indicador {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.12);
+}
+
+.semaforo-gris {
+    background-color: #BDBDBD;
+}
+
+.semaforo-rojo {
+    background-color: #DF5B26;
+}
+
+.semaforo-amarillo {
+    background-color: #F2B91B;
+}
+
+.semaforo-verde {
+    background-color: #739E5B;
+}
+
+.semaforo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mensaje-valoracion {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--verde-principal);
+}
+
+/* ------------------------------------------------------------
+   REPORTE PYTHON / JUPYTER NOTEBOOK
+------------------------------------------------------------ */
+
+/* Bloque donde se carga el reporte exportado desde Python */
+.bloque-reporte-python {
+    padding: 18px;
+}
+
+/* Iframe que muestra el HTML del notebook */
+.iframe-reporte-python {
+    width: 100%;
+    height: 1100px;
+    border: 2px solid var(--gris-borde);
+    border-radius: 12px;
+    background-color: var(--blanco);
+}
+
+/* ------------------------------------------------------------
+   GALERÍA DE IMÁGENES DE ECOSISTEMAS
+------------------------------------------------------------ */
+
+/* Tarjeta visual para cada imagen del ecosistema */
+.tarjeta-ecosistema {
+    /* Altura fija para que las cuatro imágenes se vean parejas */
+    height: 180px;
+
+    /* Oculta partes sobrantes de la imagen */
+    overflow: hidden;
+
+    /* Bordes redondeados */
+    border-radius: 10px;
+
+    /* Fondo blanco */
+    background-color: var(--blanco);
+
+    /* Sombra suave */
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.10);
+
+    /* Borde suave */
+    border: 1px solid var(--gris-borde);
+}
+
+/* Imagen dentro de cada tarjeta */
+.tarjeta-ecosistema img {
+    /* Ocupa todo el ancho */
+    width: 100%;
+
+    /* Ocupa toda la altura */
+    height: 100%;
+
+    /* Recorta la imagen sin deformarla */
+    object-fit: cover;
+
+    /* Hace que se comporte como bloque */
+    display: block;
+
+    /* Transición suave para efecto visual */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta-ecosistema:hover img {
+    /* Zoom suave */
+    transform: scale(1.05);
+}

@@ -1,0 +1,162 @@
+<!-- Indica que este archivo usa HTML5. -->
+<!DOCTYPE html>
+
+<!-- Abre el documento HTML e indica que el idioma principal es español. -->
+<html lang="es">
+
+<head>
+    <!-- Permite usar tildes, ñ y caracteres especiales. -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte correctamente a celulares, tablets y computadores. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador. -->
+    <title>COLFLUX - Prototipo</title>
+
+    <!-- Conecta la tipografía IBM Plex Sans desde Google Fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conecta el archivo de estilos CSS. -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal de la página.
+         Aquí irá el logo y el texto de consulta como en tu boceto. -->
+    <header class="header-principal">
+
+        <!-- Contenedor del logo. -->
+        <div class="logo-contenedor">
+
+            <!-- Imagen del logo COLFLUX.
+                 Debes guardar el archivo en assets/img/logo-colflux.png -->
+            <img src="assets/img/logo-colflux.png" alt="Logo COLFLUX" class="logo-colflux">
+        </div>
+
+        <!-- Texto superior derecho del encabezado. -->
+        <div class="header-texto">
+
+            <!-- Frase descriptiva principal. -->
+            <p>Consulta de información, datos y gráficas de carbono</p>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página. -->
+    <main class="contenido-principal">
+
+        <!-- Sección de bienvenida. -->
+<!-- Sección de bienvenida. -->
+<section class="bloque bienvenida">
+
+    <!-- 
+        Este título ahora será dinámico.
+        Si el backend responde, aquí aparecerá "Bienvenido a COLFLUX".
+        Si el backend falla, aquí aparecerá el mensaje de error.
+    -->
+    <h1 id="estado-backend" class="estado-backend">
+        Verificando conexión con COLFLUX...
+    </h1>
+
+    <!-- Texto introductorio fijo de la plataforma. -->
+    <p>
+        Plataforma básica para consultar información tipo wiki, visualizar datos ambientales
+        y explorar gráficas relacionadas con flujos de carbono en ecosistemas estratégicos.
+    </p>
+
+</section>
+
+        <!-- Sección principal de navegación interna. -->
+        <section class="bloque bloque-consulta">
+
+
+            <!-- Contenedor de tarjetas principales: Diccionario y Dashboard. -->
+            <div class="tarjetas-acceso">
+
+                <!-- Enlace que abre la página del diccionario al hacer clic. -->
+                <a href="diccionario.html" class="tarjeta-link">
+
+                    <!-- Tarjeta de acceso al diccionario/wiki. -->
+                    <article class="tarjeta-acceso">
+
+                        <!-- Título de la tarjeta. -->
+                        <h2>Diccionario</h2>
+
+                        <!-- Descripción corta de la tarjeta. -->
+                        <p>
+                            Consulta conceptos, metodologías, variables ambientales
+                            y términos clave del proyecto COLFLUX.
+                        </p>
+
+                    </article>
+                </a>
+
+<!-- Enlace que abre la página dashboard.html al hacer clic. -->
+<a href="dashboard.html" class="tarjeta-link">
+
+    <!-- Tarjeta de acceso al dashboard. -->
+    <article class="tarjeta-acceso">
+
+        <!-- Título de la tarjeta. -->
+        <h2>Dashboard</h2>
+
+        <!-- Descripción corta de la tarjeta. -->
+        <p>
+            Visualiza datos temporales, gráficas de carbono,
+            variables ambientales y resultados del monitoreo.
+        </p>
+
+    </article>
+</a>
+            </div>
+        </section>
+
+
+
+        <!-- Sección visual inferior inspirada en tu boceto.
+             Más adelante aquí podemos poner imágenes reales de ecosistemas. -->
+<!-- Galería visual de ecosistemas COLFLUX. -->
+<section class="galeria-ecosistemas">
+
+    <!-- Imagen 1 del ecosistema. -->
+    <article class="tarjeta-ecosistema">
+        <img 
+            src="assets/img/ecosistemas/1.jpg" 
+            alt="Ecosistema de páramo COLFLUX"
+        >
+    </article>
+
+    <!-- Imagen 2 del ecosistema. -->
+    <article class="tarjeta-ecosistema">
+        <img 
+            src="assets/img/ecosistemas/2.jpg" 
+            alt="Vegetación de ecosistema monitoreado"
+        >
+    </article>
+
+    <!-- Imagen 3 del ecosistema. -->
+    <article class="tarjeta-ecosistema">
+        <img 
+            src="assets/img/ecosistemas/3.jpg" 
+            alt="Cobertura vegetal y suelo del ecosistema"
+        >
+    </article>
+
+    <!-- Imagen 4 del ecosistema. -->
+    <article class="tarjeta-ecosistema">
+        <img 
+            src="assets/img/ecosistemas/4.jpg" 
+            alt="Paisaje de ecosistema COLFLUX"
+        >
+    </article>
+
+</section>
+
+    </main>
+
+    <!-- Conecta el archivo JavaScript. -->
+    <script src="app.js"></script>
+
+</body>
+</html>

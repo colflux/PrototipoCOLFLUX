@@ -1,0 +1,90 @@
+<!-- Indica que este archivo usa HTML5. -->
+<!DOCTYPE html>
+
+<!-- Documento HTML en español. -->
+<html lang="es">
+
+<head>
+    <!-- Permite tildes, ñ y caracteres especiales. -->
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte a diferentes pantallas. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la pestaña del navegador. -->
+    <title>COLFLUX - Análisis estadístico</title>
+
+    <!-- Carga la tipografía IBM Plex Sans. -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conecta el CSS general del proyecto. -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal. -->
+    <header class="header-principal">
+
+        <!-- Contenedor del logo. -->
+        <div class="logo-contenedor">
+
+            <!-- Logo COLFLUX. -->
+            <img src="assets/img/logo-colflux.png" alt="Logo COLFLUX" class="logo-colflux">
+
+        </div>
+
+        <!-- Texto derecho del encabezado. -->
+        <div class="header-texto">
+
+            <!-- Descripción de la página. -->
+            <p>Análisis estadístico y correlaciones de datos ambientales</p>
+
+        </div>
+
+    </header>
+
+    <!-- Contenido principal. -->
+    <main class="contenido-principal">
+
+        <!-- Botón para volver al dashboard. -->
+        <a href="dashboard.html" class="btn-volver">
+            ← Volver al dashboard
+        </a>
+
+        <!-- Bloque de introducción. -->
+        <section class="bloque">
+
+            <!-- Título principal. -->
+            <h1 class="titulo-dashboard">
+                Análisis estadístico COLFLUX
+            </h1>
+
+            <!-- Texto descriptivo. -->
+            <p class="texto-seccion">
+                Esta sección muestra el reporte generado desde Python/Jupyter Notebook,
+                incluyendo tablas, análisis descriptivos, correlaciones y gráficas estadísticas.
+            </p>
+
+        </section>
+
+        <!-- Bloque del reporte Python. -->
+        <section class="bloque bloque-reporte-python">
+
+            <!-- Título de la sección. -->
+            <h2 class="titulo-seccion">Reporte generado desde Python</h2>
+
+            <!-- Iframe que carga el reporte exportado desde Jupyter. -->
+            <iframe 
+                src="reportes/analisis_correlaciones_guatavita.html"
+                class="iframe-reporte-python"
+                title="Reporte de análisis estadístico COLFLUX">
+            </iframe>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

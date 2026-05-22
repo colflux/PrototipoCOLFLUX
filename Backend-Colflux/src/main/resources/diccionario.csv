@@ -1,0 +1,11 @@
+﻿
+
+
+
+
+
+
+Frase de campo;“La zona está viva”;Alta actividad biológica visible o funcional.;Flujo de CO2 / Flujo de CH4;Vegetación o Radiación fotosintéticamente activa PAR o humedad relativa;Flujo de CO2≥ 3.145 o Flujo de CH4≥ 0.0188 o con vegetación presente;Área con alta actividad ecosistémica ya sea respiración descomposición o emisión de gases.
+Frase de campo;“La zona está apagada”;Baja actividad aparente o flujos bajos.;Flujo de CO2 / Flujo de CH4;Radiación fotosintéticamente activa PAR o vegetación;Flujo de CO2 entre -0.665 y 3.145 + Flujo de CH4 < 0.00188 µmol/m²/s;Actividad baja o condición estable con poca emisión.
+Frase de campo;“Está muy seco para ser humedal”;Condición de baja saturación o posible drenaje.;Nivel del agua en cm;distance_to_dich o flujo de CO2;Nivel del agua en cm ≤ 0 cm o distance_to_dich ≤ 5.85 m;Puede indicar efecto de drenaje  menor CH4 y mayor aireación.
+DEFINICION ;Biodiversidad;Variedad de especies vivas en un ecosistema.;;;;
