@@ -2,7 +2,7 @@
 // DASHBOARD COLFLUX
 // Relación entre datos cuantitativos y diccionario ecológico
 // -----------------------------------------------------------------------------
-
+const API_BASE_URL = "https://prototipocolflux.onrender.com";
 // Guarda todos los datos de flujo recibidos desde /api/flujos.
 let datosFlujos = [];
 
@@ -36,11 +36,10 @@ function iniciarDashboard() {
 
 function cargarDatosIniciales() {
 
-    // Promise.all permite cargar al mismo tiempo flujos y diccionario.
-    Promise.all([
-        fetch("http://localhost:8080/api/flujos").then(response => response.json()),
-        fetch("http://localhost:8080/api/wiki").then(response => response.json())
-    ])
+Promise.all([
+    fetch(`${API_BASE_URL}/api/flujos`).then(response => response.json()),
+    fetch(`${API_BASE_URL}/api/wiki`).then(response => response.json())
+])
 
         // Cuando ambas APIs responden, recibimos los dos arreglos.
         .then(([flujos, diccionario]) => {
